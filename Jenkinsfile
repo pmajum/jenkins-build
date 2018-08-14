@@ -11,10 +11,11 @@ podTemplate(
 ) {
     node('mypod') {
         def commitId
+        def workspace
         stage ('Extract') {
             try{
-            checkout scm
-            commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+            workspace = pwd()
+            println('Work Space Details::::'+workspace)
             }catch(exc){
                 println('Exception hoyeche git checkout e ---->')
                 throw(exc)
