@@ -13,7 +13,7 @@ podTemplate(
         stage('Extract'){
             try{
             sh """
-            git clone 'https://github.com/pmajum/jenkins-build.git'
+            curl 'http://www.google.com'
             """
             }catch(exc){
                println('Exception :::::::::::::::===========>>>>>>>>>>'+exc) 
