@@ -1,7 +1,14 @@
 podTemplate(
     label: 'mypod', 
     inheritFrom: 'default',
-   
+    containers: [
+        containerTemplate(
+            name: 'golang', 
+            image: 'golang:1.10-alpine',
+            ttyEnabled: true,
+            command: 'cat'
+        )
+    ],
     volumes: [
         hostPathVolume(
             hostPath: '/var/run/docker.sock',
@@ -10,19 +17,10 @@ podTemplate(
     ]
 ) {
     node('mypod') {
-        def commitId
-        def workspace
-        stage ('Extract') {
-            try{
-               sleep 300
-           
-                
-                
-            }catch(exc){
-                println('Exception hoyeche git checkout e ---->')
-                throw(exc)
+        container('golang') {
+            stage('Checkout') {
+                checkout scm
             }
-        }
         
         
     }
