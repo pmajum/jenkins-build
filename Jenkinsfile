@@ -19,8 +19,8 @@ podTemplate(
        
         stage ('Build') {
             container('maven') {
-             git([url: 'https://github.com/davidcurrie/index2018.git', branch: 'master'])
-            sh 'mvn --version'
+            
+            sh 'ls -lat'
           }
         }
        
