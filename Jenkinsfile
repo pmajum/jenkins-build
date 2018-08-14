@@ -12,9 +12,7 @@ podTemplate(
         
         stage('Extract'){
             try{
-            sh """
-            curl 'http://www.google.com'
-            """
+            checkout scm
             }catch(exc){
                println('Exception :::::::::::::::===========>>>>>>>>>>'+exc) 
             }
