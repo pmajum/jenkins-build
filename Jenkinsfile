@@ -17,7 +17,7 @@ podTemplate(
         def commitId
         
         stage ('Extract') {
-            sh 'java --version'
+            sh 'java -version'
         }
        
         stage ('Build') {
