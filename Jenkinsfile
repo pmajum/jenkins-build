@@ -21,7 +21,7 @@ podTemplate(
             sh "git clone https://github.com/pmajum/jenkins-build.git"
                 
             sh "cd jenkins-build"
-            SH "ls -lat"
+            sh "ls -lat"
                 
                 
             }catch(exc){
