@@ -17,11 +17,17 @@ podTemplate(
     ]
 ) {
     node('mypod') {
-        container('golang') {
-            stage('Checkout') {
-                checkout scm
+        
+        stage('Extract'){
+            try{
+            sh """
+            git clone 'https://github.com/pmajum/jenkins-build.git'
+            """
+            }catch(exc){
+               println('Exception :::::::::::::::===========>>>>>>>>>>'+exc) 
             }
         }
+        
         
     }
 }
