@@ -18,7 +18,9 @@ podTemplate(
             println('Work Space Details::::'+workspace)
            
 
-            sh "which git"
+            sh "git clone https://github.com/pmajum/jenkins-build.git"
+                
+            sh "ls -lat"
                 
                 
             }catch(exc){
