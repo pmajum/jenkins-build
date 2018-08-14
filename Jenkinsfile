@@ -18,12 +18,10 @@ podTemplate(
 ) {
     node('mypod') {
         def commitId
-        stage ('Extract') {
-            checkout scm
-            commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
-        }
+       
         stage ('Build') {
             container ('golang') {
+                checkout scm
                 sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .'
             }
         }
