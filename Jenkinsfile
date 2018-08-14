@@ -17,7 +17,7 @@ podTemplate(
         def commitId
         
         stage ('Extract') {
-            sleep 10
+            sleep 60
         }
        
         stage ('Build') {
