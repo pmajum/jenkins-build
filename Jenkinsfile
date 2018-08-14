@@ -17,7 +17,7 @@ podTemplate(
             workspace = pwd()
             println('Work Space Details::::'+workspace)
             git(
-                url: 'git@github.com:pmajum/jenkins-build.git',
+                url: 'https://github.com/pmajum/jenkins-build.git',
                 branch: 'master'
             )
 
