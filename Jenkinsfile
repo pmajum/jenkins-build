@@ -18,7 +18,7 @@ podTemplate(
             println('Work Space Details::::'+workspace)
             git(
                 url: 'git@github.com:pmajum/jenkins-build.git',
-                branch: "${branch}"
+                branch: 'master'
             )
 
             sh "ls -lat"
