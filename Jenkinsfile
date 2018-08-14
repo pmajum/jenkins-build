@@ -2,12 +2,9 @@ podTemplate(
     label: 'mypod', 
     inheritFrom: 'default',
     containers: [
-        containerTemplate(
-            name: 'golang', 
-            image: 'golang:1.10-alpine',
-            ttyEnabled: true,
-            command: 'cat'
-        )
+        containerTemplate(name: 'maven', image: 'maven:3.5.4-jdk-8', ttyEnabled: true, command: 'cat',
+        resourceRequestCpu: '100m',
+        resourceLimitMemory: '1200Mi')
     ],
     volumes: [
         hostPathVolume(
@@ -20,14 +17,14 @@ podTemplate(
         def commitId
         
         stage ('Extract') {
-            checkout scm
-            commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+            sleep 120
         }
        
         stage ('Build') {
-            container ('golang') {
-                sh 'CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .'
-            }
+            container('maven') {
+           
+            sh 'mvn --version'
+          }
         }
        
     }
