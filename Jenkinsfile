@@ -18,7 +18,7 @@ podTemplate(
         
         stage ('Extract') {
             container('jnlp'){
-                sh 'java -version'
+                checkout scm
             }
             
         }
