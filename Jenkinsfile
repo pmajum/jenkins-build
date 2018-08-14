@@ -15,7 +15,7 @@ podTemplate(
         stage ('Extract') {
             try{
                 dir('RepoOne') {
-                    git url: 'https://github.com/pmajum/jenkins-build.git'
+                    checkout scm
                 }
                 
             sh('ls RepoOne -lat')
