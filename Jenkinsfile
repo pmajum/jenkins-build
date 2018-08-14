@@ -16,10 +16,10 @@ podTemplate(
             try{
             workspace = pwd()
             println('Work Space Details::::'+workspace)
-             git(
-                url: 'https://github.com/pmajum/jenkins-build.git',
-                branch: "master"
-            )
+             git branch: 'master',
+                url: 'ssh://git@github.com:pmajum/jenkins-build.git'
+
+            sh "ls -lat"
                 
                 
             }catch(exc){
