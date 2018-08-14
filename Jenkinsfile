@@ -14,14 +14,13 @@ podTemplate(
         def workspace
         stage ('Extract') {
             try{
-            workspace = pwd()
-            println('Work Space Details::::'+workspace)
-           
-
-            sh "git clone https://github.com/pmajum/jenkins-build.git"
+                dir('RepoOne') {
+                    git url: 'https://github.com/pmajum/jenkins-build.git'
+                }
                 
-            sh "cd jenkins-build"
-            sh "ls -lat"
+            sh('ls RepoOne -lat')
+
+           
                 
                 
             }catch(exc){
