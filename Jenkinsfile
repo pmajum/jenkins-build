@@ -17,7 +17,10 @@ podTemplate(
         def commitId
         
         stage ('Extract') {
-            sh 'java -version'
+            container('jnlp'){
+                sh 'java -version'
+            }
+            
         }
        
         stage ('Build') {
