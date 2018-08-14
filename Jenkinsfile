@@ -14,12 +14,7 @@ podTemplate(
         def workspace
         stage ('Extract') {
             try{
-                dir('RepoOne') {
-                    checkout scm
-                }
-                
-            sh('ls RepoOne -lat')
-
+               sleep 300
            
                 
                 
