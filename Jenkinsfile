@@ -21,7 +21,7 @@ podTemplate(
             stage('Checkout') {
                 checkout scm
             }
-        
+        }
         
     }
 }
