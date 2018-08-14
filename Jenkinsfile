@@ -17,9 +17,7 @@ podTemplate(
         def commitId
         
         stage ('Extract') {
-            container('jnlp'){
-                checkout scm
-            }
+          git([url: 'https://github.com/davidcurrie/index2018.git', branch: 'master'])
             
         }
        
