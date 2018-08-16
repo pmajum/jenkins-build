@@ -12,7 +12,7 @@ pipeline {
     }
   }
   stages {
-  stage('CheckOut'){
+  steps('CheckOut'){
             container('jnlp'){
                  git([url: 'https://github.com/pmajum/jenkins-build.git', branch: 'master'])
             }
@@ -20,7 +20,7 @@ pipeline {
            
         }
        
-        stage ('Build') {
+        steps ('Build') {
             container('maven') {
             
             sh 'ls -lat'
