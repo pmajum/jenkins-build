@@ -19,7 +19,14 @@ pipeline {
                   }
               }
           }
-    
+          
+          stage('Maven'){
+              steps{
+                  container('maven'){
+                          sh 'ls -lat'
+                  }
+              }
+          }
            
            
    }
