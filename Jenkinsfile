@@ -18,6 +18,13 @@ pipeline {
                  git([url: 'https://github.com/pmajum/jenkins-build.git', branch: 'master'])
             }
     }
+    
+    stage('Maven'){
+    steps{
+      container('maven'){
+                 sh 'ls -lat'
+            }
+    }
             
            
            
