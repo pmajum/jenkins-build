@@ -16,7 +16,8 @@ podTemplate(
     node('mypod') {
         def commitId
         stage('CheckOut'){
-            git 'https://github.com/pmajum/jenkins-build.git'
+            git([url: 'https://github.com/pmajum/jenkins-build.git', branch: 'master'])
+           
         }
        
         stage ('Build') {
