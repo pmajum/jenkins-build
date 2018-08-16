@@ -24,8 +24,8 @@ pipeline {
       container('maven'){
                  sh 'ls -lat'
             }
-    }
-            
+          }
+    }     
            
            
         }
