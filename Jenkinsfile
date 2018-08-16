@@ -16,8 +16,7 @@ podTemplate(
     node('mypod') {
         def commitId
         stage('CheckOut'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-            userRemoteConfigs: [[url: 'https://github.com/pmajum/jenkins-build.git']]])   
+            git 'https://github.com/pmajum/jenkins-build.git'
         }
        
         stage ('Build') {
